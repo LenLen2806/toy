@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popmart News</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="/img/android-chrome-512x512.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="/giohang/giohang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header2 {
+            
+            color: #333;
+            padding: 15px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .header2:hover{
+            color:#e30613;
+           cursor: pointer;
+        }
+
+        .header2 h1 a:hover{
+            color:#e30613;
+           cursor: pointer;
+        }
+
+        .header2 h1 a{
+            font-weight: bold;
+            color:#333;
+            text-decoration: none;
+        }
+
+        .card{
+                display:grid;
+        }
+
+        h2{
+            font-weight: bold;
+        }
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .news-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .news-item:hover {
+            transform: translateY(-10px);
+            cursor: pointer;
+            color:#e30613;
+        }
+
+        .news-item .news-content:hover {
+            cursor: pointer;
+            color:#e30613;
+        }
+
+        
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-content {
+            padding: 15px;
+        }
+        .news-title {
+            font-size: 1.25em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .news-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .read-more {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .read-more:hover {
+            
+            cursor: pointer;
+            color:#e30613;
+        }
+            
+
+        .login {
+             font-size: 16px;
+            line-height: 20px;
+            gap:15px;
+        }
+
+        .card img {
+    width: 100%;
+    height: 130px;
+    margin: 0 auto;
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+         <a href="/giohang/giohang.html">
+          <img src="/img/Remove-bg.ai_1733056641497.png" alt="PopLand Logo">
+         </a>
+        </div>
+    
+       
+        <nav>
+            <a href="#">Mới & Nổi bật</a>
+            <div class="content">
+             <div class="card">
+               <a href="/Cố lên/popland/Mới nổi bật/laus.html">
+               <img src="https://global-static.popmart.com/globalAdmin/1732782698407____pc-%E5%AF%BB%E6%89%BEmokoko%E7%B3%BB%E5%88%97%E6%89%8B%E5%8A%9E11____.jpg?x-oss-process=image/format,webp" alt="Launch Calendar">
+               <div class="info">Lịch ra mắt</div>
+             </a>
+           </div>
+                <div class="card">
+                 <a href="/Cố lên/popland/Mới nổi bật/Trending.html">
+                    <img src="https://global-static.popmart.com/globalAdmin/1724916969411____pc%E6%B5%81%E8%A1%8C%E8%B6%8B%E5%8A%BF720_300____.jpg?x-oss-process=image/format,webp" alt="Trending">
+                    <div class="info">Trending</div>
+                   </a>
+                </div>
+                <div class="card">
+                 <a href="/Cố lên/popland/Mới nổi bật/spnew.html">
+                    <img src="https://prod-global-static.oss-us-east-1.aliyuncs.com/globalAdmin/1708078211692.jpg?x-oss-process=image/format,webp" alt="New Arrival">
+                    <div class="info">Sản phẩm mới</div>
+                   </a>
+                </div>
+                <div class="card">
+                 <a href="/Cố lên/popland/Mới nổi bật/SKNew.html">
+                    <img src="https://prod-global-static.oss-us-east-1.aliyuncs.com/globalAdmin/1716541119082____event-pc____.jpeg?x-oss-process=image/format,webp" alt="Stamps Event">
+                    <div class="info">Sự kiện mới</div>
+                   </a>
+                </div>
+                
+            </div>
+            <a href="#">Bộ sưu tập</a>
+            <div class="content">
+             <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/Hachipupu.html">
+                   <img src="/img/sanpham/Screenshot 2024-12-11 231236.png" alt="Hacipupu">
+                   <div class="info">Hacipupu</div>
+               </a>
+           </div>
+           
+              <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/Azura.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-11 232211.png" alt="Azura">
+                  <div class="info">Azura</div>
+                 </a>
+              </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/Dimoo.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-11 232644.png" alt="Dimoo">
+                  <div class="info">Dimoo</div>
+                 </a>
+              </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/The_monters.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-11 233724.png" alt="The Monsters">
+                  <div class="info">The Monsters</div>
+                 </a>
+              </div>
+              <div class="card">
+                <a href="/Cố lên/popland/Skullpanda/Skullpanda.html">
+                   <img src="/img/sanpham/20231030_173333_009457__1200x1200.jpg" alt="Skullpanda">
+                   <div class="info">Skullpanda</div>
+                  </a>
+               </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/Molly.html">
+                <img src="/img/sanpham/Screenshot 2024-12-11 231751.png" alt="Molly">
+                <div class="info">Molly</div>
+               </a>
+            </div>
+          </div>
+            <a href="/test1/test1.html"><span class="tintuc">Tin tức</span></a>
+    
+           <a href="#">Thể loại</a>
+           <div class="content">
+             <div class="card">
+               <a href="/Cố lên/popland/Thể loại/Collaborations.html">
+                 <img src="/img/sanpham/Screenshot 2024-12-11 235929.png" alt="Hợp tác">
+                 <div class="info">Hợp tác</div>
+               </a>
+             </div>
+             <div class="card">
+               <a href="/Cố lên/popland/Thể loại/Figures.html">
+                 <img src="/img/sanpham/Screenshot 2024-12-11 235729.png" alt="Mô hình">
+                 <div class="info">Mô hình</div>
+               </a>
+             </div>
+             <div class="card">
+               <a href="/Cố lên/popland/Thể loại/Action.html">
+                 <img src="/img/sanpham/Screenshot 2024-12-11 235524.png" alt="Mô hình hành động">
+                 <div class="info">Mô hình hành động</div>
+               </a>
+             </div>
+          </div>
+            <a href="#">Phụ kiện</a>
+            <div class="content">
+              <div class="card">
+               <a href="/Cố lên/popland/Phụ kiện/mockhoa.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-12 000900.png" alt="Móc khóa">
+                  <div class="info">Móc khóa</div>
+                 </a>
+              </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Phụ kiện/case.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-12 000124.png" alt="Ốp điện thoại">
+                  <div class="info">Ốp điện thoại</div>
+                 </a>
+              </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Phụ kiện/Tui.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-12 000337.png" alt="Túi">
+                  <div class="info">Túi</div>
+                 </a>
+              </div>
+            </div>
+          </div>
+       
+        </nav>
+      
+        <div class="search-and-icons">
+    
+        <div class="search-bar">
+          <input type="text" id="search" placeholder="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+                  
+        <div class="icons">
+    
+        <div class="login logout">
+          <img class="icon-VN" src="/img/Remove-bg.ai_1733058451762.png"></img>
+           <i class="fa-solid fa-user"></i>
+           <span class="login-text">
+               <a href="/Sign up/sign_up.html">Đăng ký</a> /<br>
+               <a href="/Login/login.html">Đăng nhập</a>
+           </span>
+       </div>
+    
+    
+       
+        <div>
+          <a href="#" title="Help"><i class="fa-solid fa-headphones"></i></a>
+        </div>
+        <div>
+          <a href="#" title="Wishlist"><span class="favorites">
+           <i class="fa-solid fa-heart"></i><span class="item-count" id="favorites-count">0</span>
+       </span></a>
+          <a href="#" title="Cart"><span class="cart">
+           <i class="fa-solid fa-cart-shopping"></i><span class="item-count" id="item-count">0</span>
+       </span></a>
+       <div class="cart-details" id="cart-details">
+           <div class="cart-items" id="cart-items"></div>
+           <div class="total" id="total">Total: 0 ₫</div>
+       </div>
+       <div class="favorites-details" id="favorites-details">
+           <div class="favorite-items" id="favorite-items"></div>
+       </div>
+        </div>
+        </div>
+      </div>
+    
+      </header>
+    
+    
+
+    <div class="header2">
+        <h1><a href="/test1/test1.html">Tin tức</a></h1>
+        <p>Cập nhật tin tức mỗi ngày với Popland</p>
+    </div>
+
+    <div class="news-container">
+        <div class="news-item">
+            <img src="/img/slideshow/banner.webp" alt="Popmart Product 1" class="news-image">
+            <div class="news-content">
+                <h2 class="news-title"> Ra mắt bộ sưu tập "Thế giới Phép thuật"</h2>
+                <p class="news-description">Bộ sưu tập mới của Popland với các mô hình mang phong cách phép thuật đầy mê hoặc.</p>
+                <a href="/test1/testdt1.html" class="read-more">Đọc ngay</a>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <img src="/img/slideshow/banner1.webp" alt="Popmart Product 2" class="news-image">
+            <div class="news-content">
+                <h2 class="news-title">Cập nhật ứng dụng Popland với tính năng mới</h2>
+                <p class="news-description"> Ứng dụng Popland được nâng cấp, mang đến trải nghiệm mua sắm tiện lợi hơn.</p>
+                <a href="/test1/test1dt2.html" class="read-more">Đọc ngay</a>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <img src="/img/slideshow/banner2.webp" alt="Popmart Product 3" class="news-image">
+            <div class="news-content">
+                <h2 class="news-title">Ra mắt "Hộp bất ngờ" dành riêng cho phái nam</h2>
+                <p class="news-description">Hộp bất ngờ" Popland mang đến các mô hình ngẫu nhiên với phong cách cá tính, mạnh mẽ</p>
+                <a href="/test1/test1dt3.html" class="read-more">Đọc ngay</a>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <img src="/img/slideshow/1733388267420____pc三图模式-708_584-1____.webp" alt="Popmart Product 4" class="news-image">
+            <div class="news-content">
+                <h2 class="news-title">Popland tổ chức cuộc thi "Sáng tạo với mô hình"</h2>
+                <p class="news-description">Cuộc thi sáng tạo dành riêng cho khách hàng thân yêu của Popland.</p>
+                <a href="/test1/test1dt4.html" class="read-more">Đọc ngay</a>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <img src="/img/slideshow/Screenshot 2024-12-07 202822.png" alt="Popmart Product 5" class="news-image">
+            <div class="news-content">
+                <h2 class="news-title">Mở bán phiên bản giới hạn "Cô nàng trong mơ"</h2>
+                <p class="news-description">Phiên bản giới hạn mô hình "Cô nàng trong mơ" được bán độc quyền tại Popland.</p>
+                <a href="/test1/test1dt5.html" class="read-more">Đọc ngay</a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="column logo">
+            <img src="/img/slideshow/snapedit_1733821346501.png" alt="Popland">
+        </div>
+        <div class="column">
+            <h3>POPLAND</h3>
+            <ul>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Thông Tin</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Dịch Vụ</h3>
+            <ul>
+                <li><a href="#">Các Gói Dịch Vụ</a></li>
+                <li><a href="#">Quảng Cáo</a></li>
+            </ul>
+        </div>
+        <div class="column contact">
+            <h3>Hỗ Trợ</h3>
+            <p>Trung Tâm Trợ Giúp</p>
+            <p><i class="fa fa-phone"></i> 1900099999</p>
+            <p><i class="fa fa-envelope"></i> poplandvn@gmail.com</p>
+        </div>
+        <div class="column quydinh">
+            <h3>Quy Định</h3>
+            <ul>
+                <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                <li><a href="#">Chính Sách Thanh Toán</a></li>
+                <li><a href="#">Chính Sách Bảo Mật</a></li>
+            </ul>
+        </div>
+      </footer>
+</body>
+</html>

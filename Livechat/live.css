@@ -1,0 +1,230 @@
+.chat-container{   
+    position: fixed;
+    bottom: 5%;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    z-index: 1000;
+
+}
+/* Biểu tượng chat */
+.chat-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+  
+  .chat-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .chat-icon:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Widget Chat */
+  .chat-widget {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    height: 250px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    position: absolute;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    z-index: 1001;
+    padding: 15px;
+    transform: translateY(15px); /* Dịch xuống dưới */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+  }
+
+  .chat-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .chat-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .chat-header h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .chat-header span {
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .chat-buttons span {
+    display: block;
+    width: 80%;
+    padding: 14px;
+    font-size: 17px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 17px;
+    margin-top: 15px;
+    cursor: pointer;
+    margin-left: 5.7%;
+  }
+  
+  .fb-btn {
+    background-color: #b0e3e3;
+    color: #fff;
+  }
+  .fb-btn:hover{
+    background-color: rgba(10, 150, 157, 0.699);
+  }
+  .quick-chat-btn {
+    background-color: #f1f1f1;
+    color: #000;
+  }
+  
+  .quick-chat-btn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Khung chat */
+  .chat-box {
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1002;
+  }
+  
+  .chat-header-box {
+    background-color: #b0e3e3;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .chat-header-box h4 {
+     margin: 12px 0px 10px 0;
+  }
+
+
+
+#closeChatBox {
+    border-radius: 5px;
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    padding: 2px 8px;
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+    border-color: rgba(10, 150, 157, 0.699);
+    cursor: pointer;
+} 
+
+#closeChatBox span:hover {
+    background-color: #A9D6E5;
+}
+
+  .chat-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .chat-footer {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    display: flex;
+  }
+  
+  .chat-footer input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+  }
+  
+  .chat-footer span{
+    background-color: #b0e3e3;
+    color: #fff;
+    border-color:rgba(10, 150, 157, 0.699) ;
+    padding: 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .language-toggle {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .language-toggle a {
+    color: #0078ff;
+    text-decoration: none;
+  }
+  
+  .language-toggle a:hover {
+    text-decoration: underline;
+  }
+
+  
+
+  /*ipad pro*/
+  @media (max-width: 1024px){
+    .login-text {
+      display: none;
+  }
+
+  .skullpanda {
+    display: none;
+  }
+
+  .search-and-icons {
+    gap: 15px;
+    margin-right: 10px;
+  }
+
+  .icons{
+    gap:15px;
+  }
+  }
+  .title {
+    font-size: 30px;
+    margin-left: 20px;
+    color: #121111;
+    text-align: center;
+    padding-top: 60px;
+    position: relative;
+  }

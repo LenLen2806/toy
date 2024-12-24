@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopLand</title>
+    <link rel="icon" href="/img/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Cố lên/colen.css">
+    <link rel="stylesheet" href="/giohang/giohang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+   <style>
+  /* Container styling for the pop-up */
+  .bodyh {
+    background-color: #ffffff;
+    padding-top: 100px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.login-text{
+    gap:20px;
+}
+
+
+.bodyh nav {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+}
+
+.bodyh nav a {
+    text-decoration: none;
+    color: #555;
+}
+.bodyh span{
+    color: #ff0000;
+    cursor: pointer;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    grid-auto-rows: auto;
+    justify-content: center; /* Căn giữa các sản phẩm bên trong */
+    gap: 21px;/* Khoảng cách giữa các sản phẩm */
+    margin: 10px 10px 10px 10px;
+    max-height: none;
+    overflow: visible;
+    padding: 20px;
+    
+}
+div#day{
+    box-sizing: border-box;
+    width: 100%;
+}
+#day h1{
+    font-size: 20px;
+    margin: 25px 0px 15px 20px;
+}
+.product-grid h3 {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin: 10px 0 19.92px;
+}
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+
+.product-item .stock-time {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-item h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-item .price {
+    font-size: 16px;
+    color: #ff0000;
+    font-weight: bold;
+    margin-bottom: 15px;
+    justify-content:center;
+}
+.product-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/*----Nút bấm----*/
+.notify-btn {
+    font-size: 13px;
+    padding: 10px 20px;
+    background-color: #999;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.notify-btn:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notify-btn:disabled::after {
+    content: " ✔";
+    font-size: 16px;
+}
+
+/* Popup Styling */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup h3 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.popup input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+input[type="checkbox"] {
+    cursor: pointer;
+    width: 19%;
+    height: 70%;
+    transform: scale(1.5);
+    margin-left: 3px;
+}
+.popup button {
+    padding: 10px 20px;
+    background-color: #b0e3e3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup button:hover {
+    background-color: #A9D6E5;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    color: black;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+/*Hộp đăng nhập*/
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-box .input-box {
+    width: 100%;
+    margin:5px 0;
+}
+
+.input-box .input-field {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    padding: 0 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input-box .input-field:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+/*--------Nút quên--------*/
+.forgot {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.forgot a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+/*-------nút submit------*/
+.input-submit {
+    width: 100%;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 50px;
+    background: #222;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #444;
+}
+
+.sign-up-link {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.sign-up-link a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sign-up-link a:hover {
+    text-decoration: underline;
+}
+
+.login {
+    font-size: 18px;
+    margin: auto;
+}
+
+   </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+         <a href="/giohang/giohang.html">
+          <img src="/img/Remove-bg.ai_1733056641497.png" alt="PopLand Logo">
+         </a>
+        </div>
+    
+       
+        <nav>
+            <a href="#">Mới & Nổi bật</a>
+            <div class="content">
+             <div class="card">
+               <a href="/Cố lên/popland/Mới nổi bật/laus.html">
+               <img src="https://global-static.popmart.com/globalAdmin/1732782698407____pc-%E5%AF%BB%E6%89%BEmokoko%E7%B3%BB%E5%88%97%E6%89%8B%E5%8A%9E11____.jpg?x-oss-process=image/format,webp" alt="Launch Calendar">
+               <div class="info">Lịch ra mắt</div>
+             </a>
+           </div>
+                <div class="card">
+                 <a href="/Cố lên/popland/Mới nổi bật/Trending.html">
+                    <img src="https://global-static.popmart.com/globalAdmin/1724916969411____pc%E6%B5%81%E8%A1%8C%E8%B6%8B%E5%8A%BF720_300____.jpg?x-oss-process=image/format,webp" alt="Trending">
+                    <div class="info">Trending</div>
+                   </a>
+                </div>
+                <div class="card">
+                 <a href="/Cố lên/popland/Mới nổi bật/spnew.html">
+                    <img src="https://prod-global-static.oss-us-east-1.aliyuncs.com/globalAdmin/1708078211692.jpg?x-oss-process=image/format,webp" alt="New Arrival">
+                    <div class="info">Sản phẩm mới</div>
+                   </a>
+                </div>
+                <div class="card">
+                 <a href="/Cố lên/popland/Mới nổi bật/SKNew.html">
+                    <img src="https://prod-global-static.oss-us-east-1.aliyuncs.com/globalAdmin/1716541119082____event-pc____.jpeg?x-oss-process=image/format,webp" alt="Stamps Event">
+                    <div class="info">Sự kiện mới</div>
+                   </a>
+                </div>
+                
+            </div>
+            <a href="#">Bộ sưu tập</a>
+            <div class="content">
+             <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/Hachipupu.html">
+                   <img src="/img/sanpham/Screenshot 2024-12-11 231236.png" alt="Hacipupu">
+                   <div class="info">Hacipupu</div>
+               </a>
+           </div>
+           
+              <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/Azura.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-11 232211.png" alt="Azura">
+                  <div class="info">Azura</div>
+                 </a>
+              </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/Dimoo.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-11 232644.png" alt="Dimoo">
+                  <div class="info">Dimoo</div>
+                 </a>
+              </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/The_monters.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-11 233724.png" alt="The Monsters">
+                  <div class="info">The Monsters</div>
+                 </a>
+              </div>
+              <div class="card">
+                <a href="/Cố lên/popland/Skullpanda/Skullpanda.html">
+                   <img src="/img/sanpham/20231030_173333_009457__1200x1200.jpg" alt="Skullpanda">
+                   <div class="info">Skullpanda</div>
+                  </a>
+               </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Bộ sưu tập/Molly.html">
+                <img src="/img/sanpham/Screenshot 2024-12-11 231751.png" alt="Molly">
+                <div class="info">Molly</div>
+               </a>
+            </div>
+          </div>
+            <a href="/test1/test1.html"><span class="tintuc">Tin tức</span></a>
+    
+           <a href="#">Thể loại</a>
+           <div class="content">
+             <div class="card">
+               <a href="/Cố lên/popland/Thể loại/Collaborations.html">
+                 <img src="/img/sanpham/Screenshot 2024-12-11 235929.png" alt="Hợp tác">
+                 <div class="info">Hợp tác</div>
+               </a>
+             </div>
+             <div class="card">
+               <a href="/Cố lên/popland/Thể loại/Figures.html">
+                 <img src="/img/sanpham/Screenshot 2024-12-11 235729.png" alt="Mô hình">
+                 <div class="info">Mô hình</div>
+               </a>
+             </div>
+             <div class="card">
+               <a href="/Cố lên/popland/Thể loại/Action.html">
+                 <img src="/img/sanpham/Screenshot 2024-12-11 235524.png" alt="Mô hình hành động">
+                 <div class="info">Mô hình hành động</div>
+               </a>
+             </div>
+          </div>
+            <a href="#">Phụ kiện</a>
+            <div class="content">
+              <div class="card">
+               <a href="/Cố lên/popland/Phụ kiện/mockhoa.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-12 000900.png" alt="Móc khóa">
+                  <div class="info">Móc khóa</div>
+                 </a>
+              </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Phụ kiện/case.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-12 000124.png" alt="Ốp điện thoại">
+                  <div class="info">Ốp điện thoại</div>
+                 </a>
+              </div>
+              <div class="card">
+               <a href="/Cố lên/popland/Phụ kiện/Tui.html">
+                  <img src="/img/sanpham/Screenshot 2024-12-12 000337.png" alt="Túi">
+                  <div class="info">Túi</div>
+                 </a>
+              </div>
+            </div>
+          </div>
+       
+        </nav>
+      
+        <div class="search-and-icons">
+    
+        <div class="search-bar">
+          <input type="text" id="search" placeholder="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+                  
+        <div class="icons">
+    
+        <div class="login logout">
+          <img class="icon-VN" src="/img/Remove-bg.ai_1733058451762.png"></img>
+           <i class="fa-solid fa-user"></i>
+           <span class="login-text">
+               <a href="/Sign up/sign_up.html">Đăng ký</a> /<br>
+               <a href="/Login/login.html">Đăng nhập</a>
+           </span>
+       </div>
+    
+    
+       
+        <div>
+          <a href="#" title="Help"><i class="fa-solid fa-headphones"></i></a>
+        </div>
+        <div>
+          <a href="#" title="Wishlist"><span class="favorites">
+           <i class="fa-solid fa-heart"></i><span class="item-count" id="favorites-count">0</span>
+       </span></a>
+          <a href="#" title="Cart"><span class="cart">
+           <i class="fa-solid fa-cart-shopping"></i><span class="item-count" id="item-count">0</span>
+       </span></a>
+       <div class="cart-details" id="cart-details">
+           <div class="cart-items" id="cart-items"></div>
+           <div class="total" id="total">Total: 0 ₫</div>
+       </div>
+       <div class="favorites-details" id="favorites-details">
+           <div class="favorite-items" id="favorite-items"></div>
+       </div>
+        </div>
+        </div>
+      </div>
+    
+      </header>
+   
+<!--------------------------------------------Main---------------------------------------------->
+<main>
+    <div class="bodyh">
+        <nav>
+            <a href="/giohang/giohang.html">HOME</a> / <a href="/Cố lên/popland/Mới nổi bật/laus.html"><span>Launch Calendar</span></a>
+        </nav>
+    </div>
+    <div class="content-lau">
+        <div id="day">
+            <h1>In Stock Dec 28</h1>
+        </div>
+        <section class="product-grid">
+            
+            <div class="product-item">
+                <span class="stock-time">17:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20231219_154230_557106__1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 1">
+                <h3>Spy x Family Anya's Daily Life Series Figures</h3>
+                <p class="price">280.000 ₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+            <div class="product-item">
+                <span class="stock-time">09:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20241219_162216_614310____1_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 2">
+                <h3>MEGA ROYAL MOLLY 100% Rouge-china</h3>
+                <p class="price">880.000 ₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+            <div class="product-item">
+                <span class="stock-time">09:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20241219_162216_614310____1_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 3">
+                <h3>MEGA ROYAL MOLLY 400% Florals-china</h3>
+                <p class="price">2.520.000 ₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+            <div class="product-item">
+                <span class="stock-time">09:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20241218_151243_982855____1_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 4">
+                <h3>DIMOO Stories in the Cup series-Auspicious</h3>
+                <p class="price">920.000₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+        </section>
+    </div>
+    <div class="content-lau">
+        <div id="day">
+            <h1>In Stock Dec 25</h1>
+        </div>
+        <section class="product-grid">
+            <div class="product-item">
+                <span class="stock-time">08:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20240924_180613_502726____1_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 1">
+                <h3>Skullpanda Bunny or Doggy Figure</h3>
+                <p class="price"> 700.000₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+            <div class="product-item">
+                <span class="stock-time">08:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20241212_111202_046784____img_v3_02hg_0a9d5b6f-9f87-4f65-b24c-1388421983ag_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 2">
+                <h3>Hirono x Clot Series Figures (Gift Box)</h3>
+                <p class="price">2.120.000 ₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+            <div class="product-item">
+                <span class="stock-time">09:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20241211_171454_221194____1_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 3">
+                <h3>Hirono x Gary Baseman Figure</h3>
+                <p class="price">700.000 ₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+        </section>
+    </div>
+    <div class="content-lau">
+        <div id="day">
+            <h1>In Stock Dec 24</h1>
+        </div>
+        <section class="product-grid">
+            
+            <div class="product-item">
+                <span class="stock-time">00:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20241211_170933_813176____1_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 1">
+                <h3>Hirono Birdy Lovely Figurines</h3>
+                <p class="price">2.520.000₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+            <div class="product-item">
+                <span class="stock-time">09:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20241211_164924_639989____1_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 2">
+                <h3>Hirono x CLOT Series Figures</h3>
+                <p class="price">280.000 ₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+        </section>
+    </div>
+    <div class="content-lau">
+        <div id="day">
+            <h1>In Stock Dec 22</h1>
+        </div>
+        <section class="product-grid">
+            
+            <div class="product-item">
+                <span class="stock-time">15:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20240416_112929_702090__1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 1">
+                <h3>Hirono Simper Lovely Figurines</h3>
+                <p class="price">700.000₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+            <div class="product-item">
+                <span class="stock-time">15:00</span>
+                <img src="https://prod-eurasian-res.popmart.com/default/20241204_104538_458431____1_____1200x1200.jpg?x-oss-process=image/format,webp" alt="Product 2">
+                <h3>Skullpanda Winter Symphony Series Plush</h3>
+                <p class="price">490.000 ₫</p>
+                <button class="notify-btn">EMAIL ME WHEN AVAILABLE</button>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Login/Register Popup -->
+    <div class="popup-container" id="authPopup" style="display: none;">
+        <div class="popup">
+            <button class="close-popup" id="closePopup">&times;</button>
+            <div class="login-header">
+                <h3>Đăng nhập</h3>
+            </div>
+            <form id="authForm">
+                <div class="login-box">
+                    <div class="input-box">
+                        <input
+                            type="text"
+                            class="input-field"
+                            placeholder="Email"
+                            autocomplete="off"
+                            required
+                        />
+                    </div>
+                    <div class="input-box">
+                        <input
+                            type="password"
+                            class="input-field"
+                            placeholder="Password"
+                            autocomplete="off"
+                            required
+                        />
+                    </div>
+                    <div class="forgot">
+                        <section>
+                            <input type="checkbox" id="check" />
+                            <label for="check">Nhớ</label>
+                        </section>
+                        <section>
+                            <a href="#">Quên mật khẩu</a>
+                        </section>
+                    </div>
+                    <div class="input-submit">
+                        <button type="submit" class="submit-btn">Đăng nhập</button>
+                    </div>
+                    <div class="sign-up-link">
+                        <p>Chưa có tài khoản? <a href="/dangki/sign_up.html">Đăng ký</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div class="notification" id="successNotification" style="display: none;">
+        <p>You've successfully registered for email notifications!</p>
+    </div>
+    <script>
+        // Placeholder JavaScript for later functionality
+      console.log("Page loaded. Ready for additional functionality.");
+      document.addEventListener('DOMContentLoaded', () => {
+    const notifyButtons = document.querySelectorAll('.notify-btn');
+    const authPopup = document.getElementById('authPopup');
+    const closePopupButton = document.getElementById('closePopup');
+    const successNotification = document.getElementById('successNotification');
+
+    // Check if user is logged in (dummy example)
+    let isLoggedIn = false;
+
+    // Handle click on "Email me when available"
+    notifyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (!isLoggedIn) {
+                // If user not logged in, show login/register popup
+                authPopup.style.display = 'flex';
+            } else {
+                // If logged in, disable the button and show success message
+                button.disabled = true;
+                successNotification.style.display = 'block';
+
+                // Hide success notification after 3 seconds
+                setTimeout(() => {
+                    successNotification.style.display = 'none';
+                }, 3000);
+            }
+        });
+    });
+
+    // Close popup
+    closePopupButton.addEventListener('click', () => {
+        authPopup.style.display = 'none';
+    });
+
+    // Handle login form submission
+    const authForm = document.getElementById('authForm');
+    authForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Simulate login process
+        isLoggedIn = true;
+        authPopup.style.display = 'none';
+        alert('You are now logged in!');
+    });
+});
+    </script>
+</main>
+<!---------------Foooter------------->
+
+  <footer class="footer">
+    <div class="column logo">
+        <img src="/img/slideshow/snapedit_1733821346501.png" alt="Popland">
+    </div>
+    <div class="column">
+        <h3>POPLAND</h3>
+        <ul>
+            <li><a href="#">Giới Thiệu</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Thông Tin</a></li>
+        </ul>
+    </div>
+    <div class="column">
+        <h3>Dịch Vụ</h3>
+        <ul>
+            <li><a href="#">Các Gói Dịch Vụ</a></li>
+            <li><a href="#">Quảng Cáo</a></li>
+        </ul>
+    </div>
+    <div class="column contact">
+        <h3>Hỗ Trợ</h3>
+        <p>Trung Tâm Trợ Giúp</p>
+        <p><i class="fa fa-phone"></i> 1900099999</p>
+        <p><i class="fa fa-envelope"></i> poplandvn@gmail.com</p>
+    </div>
+    <div class="column">
+        <h3>Quy Định</h3>
+        <ul>
+            <li><a href="#">Điều Khoản Sử Dụng</a></li>
+            <li><a href="#">Chính Sách Thanh Toán</a></li>
+            <li><a href="#">Chính Sách Bảo Mật</a></li>
+        </ul>
+    </div>
+  </footer>
+  <script src="/colen.js"></script>
+  </body>
+  </html>

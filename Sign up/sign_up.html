@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sign up | Popland</title>
+   <link rel="stylesheet" href="/Sign up/sign_up.css">
+</head>
+<body>
+   <div class="container">
+      <button class="close-btn" id="closeBtn">×</button>
+      <div class="sign-up-box">
+         <img src="/Sign up/Login.jpg" alt="Logo">
+         <div class="sign-up-header">
+            <header>REGISTER</header>
+         </div>
+         <div class="input-box">
+            <input type="text" class="input-field" placeholder="Full name" autocomplete="off" required>
+         </div>
+         <div class="input-box">
+            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+         </div>
+         <div class="input-box">
+            <input type="text" class="input-field" placeholder="Phone" autocomplete="off" required>
+         </div>
+         <div class="input-box">
+            <input
+              type="password"
+              class="input-field"
+              placeholder="Password"
+              autocomplete="off"
+              required
+            />
+          </div>
+         <div class="input-box">
+            <input
+              type="password"
+              class="input-field"
+              placeholder="Confirm Password"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="check">
+            <section>
+              <input type="checkbox" id="check" />
+              <label for="check">Remember me</label>
+            </section>
+          </div>
+          <div class="input-submit">
+            <button class="submit-btn" id="submit"></button>
+            <label for="submit">Register</label>
+          </div>
+          <div class="sign-in-link">
+            <p>Have account? <a href="login.html">Sign in</a></p>
+          </div>
+         </div>
+      </div>
+   </div>
+   <script>
+            // Bắt sự kiện click nút thoát
+document.getElementById('closeBtn').addEventListener('click', () => {
+  // Chuyển hướng sang trang khác
+  //window.history.back();
+  window.location.href = "../giohang/giohang.html";
+});
+
+   </script>
+</body>
+</html>

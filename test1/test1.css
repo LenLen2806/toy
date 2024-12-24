@@ -1,0 +1,163 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+  }
+  
+  .logo img {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+  }
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px;
+  }
+  
+  nav .content {
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav .card {
+    width: 100px;
+    text-align: center;
+  }
+  
+  nav .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  nav .card .info {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  
+  .search-and-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+  }
+  
+  .search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
+  
+  .search-bar i {
+    color: #e30613;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .icons a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .icons img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  .icons a i {
+    font-size: 20px;
+  }
+  
+
+  /* Cơ bản cho menu và hamburger */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none; /* Ẩn hamburger trên màn hình lớn */
+}
+
+.menu {
+  display: none; /* Menu ẩn theo mặc định */
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+}
+
+.menu .content {
+  padding-left: 20px;
+}
+
+.card {
+  margin: 10px 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card .info {
+  padding-top: 10px;
+}
+
+/* Khi màn hình nhỏ hơn 768px */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block; /* Hiển thị hamburger trên màn hình nhỏ */
+  }
+  .menu {
+    display: none; /* Ẩn menu trên màn hình nhỏ */
+  }
+}
+
+/* Các hiệu ứng khác */
+.menu.show {
+  display: block; /* Khi menu được kích hoạt */
+}
